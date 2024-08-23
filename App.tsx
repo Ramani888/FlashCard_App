@@ -26,6 +26,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './screens/HomeScreen';
 import VersesScreen from './screens/VersesScreen';
+import { NativeBaseProvider } from 'native-base';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -96,7 +98,11 @@ function App(): React.JSX.Element {
     //   </ScrollView>
     // </SafeAreaView>
     // <HomeScreen />
-    <VersesScreen />
+    <NativeBaseProvider>
+      <SafeAreaProvider>
+        <VersesScreen />
+      </SafeAreaProvider>
+    </NativeBaseProvider>
   );
 }
 
