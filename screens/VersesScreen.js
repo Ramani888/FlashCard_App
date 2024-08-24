@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Platform, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { scale, verticalScale } from 'react-native-size-matters';
 import { CREATE_FOLDER_BUTTON_TITLE, CREATE_FOLDER_HEADER_TITLE, CREATE_SET_BUTTON_TITLE, CREATE_SET_HEADER_TITLE, DONE_BUTTON_TITLE, FOLDER_BUTTON_TITLE, SET_BUTTON_TITLE, VERSES_SCREEN_TITLE } from '../utils/consts/Verses';
 import BackIcon from '../Assets/VersesScreen/BackIcon';
@@ -29,7 +29,7 @@ const VersesScreen = () => {
     }
     const insets = useSafeAreaInsets();
     return (
-        <View style={styles?.VersesScreenContainer}>
+        <SafeAreaView style={styles?.VersesScreenContainer}>
             <StatusBar backgroundColor={'#00394D'} />
             <View style={styles.VersesScreenHeaderContainer}>
                 <View style={styles.VersesScreenHeaderWrapper}>
@@ -90,7 +90,7 @@ const VersesScreen = () => {
                     </View>
                 </Actionsheet.Content>
             </Actionsheet>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -98,7 +98,8 @@ export default VersesScreen
 
 const styles = StyleSheet.create({
     VersesScreenContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: '#00394D',
     },
     VersesScreenHeaderContainer: {
         backgroundColor: '#00394D',
@@ -138,6 +139,7 @@ const styles = StyleSheet.create({
     },
     VersesScreenBodyContainer: {
         flex: 1,
+        backgroundColor: '#ffffff'
     },
     VersesScreenFooterContainer: {
         padding: scale(20)

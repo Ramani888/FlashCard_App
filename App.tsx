@@ -100,7 +100,8 @@ function App(): React.JSX.Element {
     // <HomeScreen />
     <NativeBaseProvider>
       <SafeAreaProvider>
-        <VersesScreen />
+        <HomeScreen />
+        {/* <VersesScreen /> */}
       </SafeAreaProvider>
     </NativeBaseProvider>
   );

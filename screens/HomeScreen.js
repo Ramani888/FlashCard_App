@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Button, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { scale, verticalScale } from 'react-native-size-matters'
 import GlobalIcon from '../Assets/HomeScreen/GlobalIcon'
 import TimeIcon from '../Assets/HomeScreen/TimeIcon'
@@ -20,7 +20,7 @@ const HomeScreen = () => {
         }
     ]
     return (
-        <View style={styles.HomeScreenContainer}>
+        <SafeAreaView style={styles.HomeScreenContainer}>
             <StatusBar backgroundColor={'#00394D'} />
             <View style={styles.HomeScreenHeaderContainer}>
                 <View style={styles.HeaderMenuContainer}>
@@ -41,7 +41,7 @@ const HomeScreen = () => {
                     </View>
                 </View>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -50,6 +50,7 @@ export default HomeScreen
 const styles = StyleSheet.create({
     HomeScreenContainer: {
         flex: 1,
+        backgroundColor: '#00394D',
     },
     HomeScreenHeaderContainer: {
         height: verticalScale(340),
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: '#ffffff'
     },
     HeaderMenuContainer: {
         display:'flex',
